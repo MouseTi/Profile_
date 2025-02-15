@@ -128,3 +128,11 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# angular
+/dist
+/e2e
+/node_modules
+/src/app/generated
+.angular
+.vercel
