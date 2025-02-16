@@ -24,17 +24,15 @@ export class MainComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     const videoElement = this.bgVideo.nativeElement;
   
-    this.isMuted = false; // Luôn bật âm thanh
-    this.volume = 100; // Đặt âm lượng 100%
+    this.isMuted = false; 
+    this.volume = 100; 
     videoElement.volume = 1;
     this.volumeInput.nativeElement.value = 100;
     localStorage.setItem('volume', '100');
   
-    // Cố gắng phát video
     videoElement.play().then(() => {
       videoElement.muted = false;
     }).catch(() => {
-      // Nếu trình duyệt chặn autoplay, đợi người dùng click
       const enableAudio = () => {
         videoElement.muted = false;
         videoElement.play();
@@ -43,7 +41,6 @@ export class MainComponent implements OnInit, AfterViewInit {
       document.addEventListener('click', enableAudio);
     });
   
-    // Cập nhật icon volume
     if (this.iconVolume) {
       this.renderer.removeClass(this.iconVolume.nativeElement, 'bxs-volume-mute');
       this.renderer.removeClass(this.iconVolume.nativeElement, 'bx-tada');
