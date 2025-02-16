@@ -22,33 +22,8 @@ export class MainComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    const videoElement = this.bgVideo.nativeElement;
-  
-    this.isMuted = false; 
-    this.volume = 100; 
-    videoElement.volume = 1;
-    this.volumeInput.nativeElement.value = 100;
-    localStorage.setItem('volume', '100');
-  
-    videoElement.play().then(() => {
-      videoElement.muted = false;
-    }).catch(() => {
-      const enableAudio = () => {
-        videoElement.muted = false;
-        videoElement.play();
-        document.removeEventListener('click', enableAudio);
-      };
-      document.addEventListener('click', enableAudio);
-    });
-  
-    if (this.iconVolume) {
-      this.renderer.removeClass(this.iconVolume.nativeElement, 'bxs-volume-mute');
-      this.renderer.removeClass(this.iconVolume.nativeElement, 'bx-tada');
-      this.renderer.removeClass(this.iconVolume.nativeElement, 'bx-flip-vertical');
-      this.renderer.addClass(this.iconVolume.nativeElement, 'bxs-volume-full');
-    }
+    this.bgVideo.nativeElement.muted = this.isMuted;
   }
-  
 
   public changeVolume(volume: any) {
     const volumeInput = volume.target.value;
