@@ -1,13 +1,10 @@
 <app-custom-cursor></app-custom-cursor>
 
 <div class="video-container">
-  <div id="video_cover">
-  </div>
+  <div id="video_cover"></div>
 
-  <div class="background-image" id="image_cover">
-  </div>
-  <video id='myVideo' autoplay muted loop #bgVideo2>
-    <source src="https://files.catbox.moe/mc65m5.mp4" type="video/mp4">
+  <video id='myVideo' autoplay muted loop #bgVideo>
+    <source src="../../../assets/videos/bgVideo.mp4" type="video/mp4">
   </video>
 
   <div class="video-overlay"></div>
@@ -17,14 +14,10 @@
   <div class="grid content-center justify-items-center text-white">
     <app-clock></app-clock>
 
-    <p class="text-white font-semibold my-4 text-[18px] md:text-[25px]">
-
-    </p>
-
     <div id="sound-slider__container" class="mt-5">
       <i class='iconVolume text-white hovered bx bxs-volume-mute bx-tada bx-flip-vertical' #iconVolume
         (click)="toggleMute()"></i>
-      <input type="range" #volumeInput value="0" min="0" max="100" id="sound-slider" (input)="changeVolume($event)"
+      <input type="range" #volumeInput value="0" min="0" max="100" id="" (input)="changeVolume($event)"
         class="hovered">
       <p id="volume">{{volume}}</p>
     </div>
