@@ -6,7 +6,7 @@
 .glowing-icons a {
   cursor: url('../../../assets/images/cursor/link.png'), default;
   position: relative;
-  background: #ff0000;
+  background: #202020;
   text-decoration: none;
   border-radius: 50%;
   color: #808080;
@@ -16,6 +16,7 @@
   align-items: center;
   width: 50px;
   height: 50px;
+  margin-top: 200px; /* Đẩy xuống 20px */
 }
 
 .glowing-icons i {
