@@ -143,16 +143,14 @@
   width: 300px;
   height: 20px;
   padding: 20px 40px;
-  background: rgba(255, 255, 255, 0.01);
-  border: 1px solid rgba(255, 255, 255, 0.01);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.03);
   border-radius: 1in;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
-  transform: translate(-800px, -180px);
 }
-
 
 #sound-slider {
   margin: 0 10px;
