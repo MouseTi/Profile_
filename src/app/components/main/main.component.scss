@@ -200,3 +200,31 @@
   text-align: right;
 }
 // End Volume Slider
+
+@media (max-width: 768px) { 
+  .video-container {
+    height: 50vh; // Giảm chiều cao video trên màn hình nhỏ
+  }
+
+  .container-info {
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center;
+  }
+
+  #sound-slider {
+    width: 80%; // Tăng kích thước thanh trượt âm thanh
+  }
+
+  app-clock {
+    display: none; // Ẩn đồng hồ trên màn hình nhỏ nếu không cần thiết
+  }
+}
+
+@media (max-width: 480px) {
+  .glowing-icons ul {
+    flex-direction: column; // Hiển thị icon theo dạng dọc trên mobile nhỏ
+    gap: 10px;
+  }
+}
+
