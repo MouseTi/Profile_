@@ -46,37 +46,36 @@
 }
 
 @media screen and (max-width: 768px) {
-
-  .rxps {
-    position: relative;
-    display: inline-block;
-    list-style-type: none;
-    margin: 0rem 0.5rem 1rem 0.5rem;
-  }
-
   .glowing-icons a {
-    width: 55px;
-    height: 55px;
+    width: 45px;
+    height: 45px;
   }
 
   .glowing-icons i {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .video-container video {
   position: absolute;
-  overflow: hidden;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   object-fit: cover;
-  height: 100%;
-  width: 100%;
+  width: 100vw;
+  height: auto;
+  max-height: 100vh;
 }
 
 .container-info {
-  height: 100vh;
+  height: auto;
   width: 100vw;
   overflow-y: auto;
   display: flex;
@@ -84,65 +83,21 @@
   align-items: center;
   flex-direction: column;
   gap: 2rem;
+  padding: 2rem;
 
-  @media screen and (max-height: 816px) {
-    justify-content: flex-start;
-    padding: 4rem 0rem 4rem 0rem;
+  @media screen and (max-width: 768px) {
+    padding: 1rem;
+    text-align: center;
   }
-}
-
-#video_cover {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  overflow: hidden;
-  z-index: -100;
-  background: url('https://img.upanh.tv/2024/12/04/431117986dcdb6729a80bba3367fb61d.gif') repeat;
-  background-size: cover;
-  background-position: center;
-}
-
-#myVideo {
-  position: absolute;
-  overflow: hidden;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -100;
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-}
-
-.video-overlay {
-  position: fixed;
-  overflow: hidden;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: -10;
-}
-
-@media screen and (max-width: 768px) {
-  .video-container video {
-    width: 100vw;
-    height: auto;
-  }
-}
-
-.iconVolume {
-  font-size: 20px !important;
-  cursor: url('../../../assets/images/cursor/link.png'), default;
 }
 
 #sound-slider__container {
   display: flex;
   gap: 10px;
-  width: 300px;
-  height: 20px;
-  padding: 20px 40px;
+  width: 90%;
+  max-width: 300px;
+  height: auto;
+  padding: 15px 30px;
   background: rgba(255, 255, 255, 0.07);
   border: 1px solid rgba(255, 255, 255, 0.03);
   border-radius: 1in;
@@ -150,81 +105,42 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
-  transform: translate(-800px, -75px);
 }
 
 #sound-slider {
-  margin: 0 10px;
   appearance: none;
   width: 100%;
-  border-radius: 1in;
+  height: 10px;
+  border-radius: 5px;
   outline: none;
   transition: .2s;
   cursor: pointer;
   background: rgba(255, 255, 255, 0.4);
-  cursor: url('../../../assets/images/cursor/link.png'), default;
+}
 
-  &:hover {
-    background: rgba(255, 255, 255, 0.6);
-  }
+#sound-slider::-webkit-slider-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+}
 
-  &::-webkit-slider-thumb {
-    appearance: none;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: #fff;
-    cursor: pointer;
-    cursor: url('../../../assets/images/cursor/link.png'), default;
-    transition: .2s;
-  }
-
-  &::-moz-range-thumb {
-    appearance: none;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: #fff;
-    cursor: pointer;
-    cursor: url('../../../assets/images/cursor/link.png'), default;
-    transition: .2s;
-  }
-
-  &::-webkit-slider-thumb:hover {
-    transform: scale(1.2);
-  }
+#sound-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
 }
 
 #volume {
   color: #dcdcdc;
-  text-align: right;
 }
-// End Volume Slider
 
-@media (max-width: 768px) { 
-  .video-container {
-    height: 50vh; // Giảm chiều cao video trên màn hình nhỏ
+@media screen and (max-width: 768px) {
+  #sound-slider__container {
+    width: 100%;
+    max-width: 250px;
+    padding: 10px 20px;
   }
-
-  .container-info {
-    flex-direction: column; 
-    align-items: center; 
-    text-align: center;
-  }
-
   #sound-slider {
-    width: 80%; // Tăng kích thước thanh trượt âm thanh
-  }
-
-  app-clock {
-    display: none; // Ẩn đồng hồ trên màn hình nhỏ nếu không cần thiết
+    height: 8px;
   }
 }
-
-@media (max-width: 480px) {
-  .glowing-icons ul {
-    flex-direction: column; // Hiển thị icon theo dạng dọc trên mobile nhỏ
-    gap: 10px;
-  }
-}
-
